@@ -8,6 +8,7 @@ class AStar {
     this.path = new Array();
     this.finalDistance = 999999999;
     this.hasFinished = false;
+    this.numSteps = 0;
 
     // BFS arrays 
     this.dist = new Array(data.length).fill(999999999); // f Score
@@ -95,6 +96,7 @@ class AStar {
   }
 
   step() {
+    this.numSteps++;
     let minHeur = 999999999;
     let minId = -1;
     let queueIndex = -1;
@@ -143,6 +145,7 @@ class AStar {
   }
 
   draw() {
+    //Lines
     if(!this.hasFinished) {
       stroke(255);
       strokeWeight(0.5);

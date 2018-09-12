@@ -8,6 +8,7 @@ class Greedy {
     this.path = new Array();
     this.hasFinished = false;
     this.finalDistance = 999999999;
+    this.numSteps = 0;
 
     // BFS arrays 
     this.dist = new Array(data.length).fill(999999999);
@@ -92,6 +93,7 @@ class Greedy {
   }
 
   step() {
+    this.numSteps++;
     let minHeur = 999999999;
     let minId = -1;
     let queueIndex = -1;
